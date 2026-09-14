@@ -24,6 +24,5 @@ jobs:
         run: |
           flake8 service tests
 
-      - name: Run unit tests
-        run: |
-          nosetests
+      - name: Run unit tests with nose
+        run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
