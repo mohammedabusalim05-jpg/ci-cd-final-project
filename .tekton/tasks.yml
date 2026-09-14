@@ -1,0 +1,31 @@
+cat > .tekton/tasks.yml <<'EOF'
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: cleanup
+spec:
+  workspaces:
+    - name: source
+  steps:
+    - name: cleanup
+      image: alpine:latest
+      script: |
+        #!/bin/sh
+        rm -rf $(workspaces.source.path)/*
+---
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: nose
+spec:
+  workspaces:
+    - name: source
+  steps:
+    - name: nose
+      image: python:3.9-slim
+      script: |
+        #!/bin/bash
+        cd $(workspaces.source.path)
+        pip install -r requirements.txt
+        nosetests
+EOF
