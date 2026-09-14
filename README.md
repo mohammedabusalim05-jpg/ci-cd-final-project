@@ -1,3 +1,4 @@
+[![Build Status](https://github.com/mohammedabusalim05-jpg/ci-cd-final-project/actions/workflows/workflow.yml/badge.svg)](https://github.com/mohammedabusalim05-jpg/ci-cd-final-project/actions/workflows/workflow.yml)
 # CI/CD Tools and Practices Final Project Template
 ci-cd-final-project
 This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
